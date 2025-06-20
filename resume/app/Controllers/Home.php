@@ -27,6 +27,7 @@ class Home extends BaseController
                 'contact_data' => $contactModel->findAll(),
                 'education_data' => $educationModel->findAll(),
                 'course_data' => $courseModel->findAll(),
+                'tech_stacks' => $stackModel->findAll(),
             ];
 
             
@@ -50,7 +51,6 @@ class Home extends BaseController
 
                 $project['tech_stacks'] = $tech_data;
             }
-
             $data['projects'] = $projects;
 
             return view('index', $data);

@@ -13,7 +13,7 @@ class ProjectConnSeeder extends Seeder
             ['id_ap_fk' => 11, 'id_stack_fk' => 2],
             ['id_ap_fk' => 11, 'id_stack_fk' => 1],
 
-            // UPV-OATS: Figma (3), React.js (4), TailWind CSS (5), JavaScript (6)
+            // UPV-OATS: Figma (3), React.js (4), TailWind CSS (5), TypeScript (6)
             ['id_ap_fk' => 12, 'id_stack_fk' => 3],
             ['id_ap_fk' => 12, 'id_stack_fk' => 4],
             ['id_ap_fk' => 12, 'id_stack_fk' => 5],

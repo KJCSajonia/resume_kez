@@ -70,11 +70,38 @@ body {
   animation: slideInDown 0.6s ease-out 0.5s both;
 }
 
+.edu-desc{
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1%;
+  font-style: italic;
+  color:#001e33;
+}
+.proj-desc{
+  font-size: 0.9rem;
+  font-weight: 550;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-style: italic;
+  color:#032d47;
+}
+
 .description {
   padding-left: 2.5%;
   padding-right: 2%;
+
 }
 
+.description:hover {
+   transform: translateX(1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e5ebf0 100%);
+  color:#00439a;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  padding: 1%;
+  
+}
 
 
 .container {
@@ -89,7 +116,9 @@ body {
   height: 94%;
 
 }
-
+.blue{
+  color: rgb(24, 119, 242);
+}
 .container:hover {
   transform: translateY(-1px);
   box-shadow: -8px 8px 15px #d0d0d0, 8px -8px 15px #f0f0f0;
@@ -121,7 +150,7 @@ body {
 
 .container-personal {
   padding-top: 2%;
-  border-bottom: 0.1em solid black;
+  border-bottom: 0.1em solid rgb(24, 119, 242);
 
 }
 
@@ -146,7 +175,9 @@ body {
     text-shadow: 0 0 10px rgba(74, 144, 226, 0.3), 0 0 20px rgba(74, 144, 226, 0.1);
   }
 }
-
+/* .content{
+  color: #0b4591;
+} */
 .connect {
   font-size: 1.25rem;
   margin-left: 1%;
@@ -183,10 +214,18 @@ body {
 .contents tr:hover {
   background-color: #f8f9fa;
   transform: translateX(5px);
+  transform: translateX(1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e5ebf0 100%);
+  color:#00439a;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  padding: 1%;
 }
 
 .contents tr:hover td {
-  color: #4a90e2;
+  color: #00439a;
+
 }
 
 .container-connect {
@@ -248,9 +287,8 @@ body {
 .collaborate-text{
   margin-left: 5%;
   margin-top: 2%;
-  font-style: italic;
   font-weight: 600;
-  color:#1a7bdc;
+  
 }
 .container-connect-icons {
   display: flex;
@@ -313,12 +351,12 @@ table {
   margin-bottom: 2%;
 }
 
-.education-table tr:hover,
+/* .education-table tr:hover,
 .projects-table tr:hover {
   background-color: #f8f9fa;
   transform: translateX(8px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
+} */
 
 table td {
   padding: 1% 0.75%;
@@ -370,6 +408,7 @@ table td strong {
 
 .education table td:first-child,
 .projects table td:first-child {
+  
   width: 70%;
   text-align: left;
 }
@@ -387,18 +426,19 @@ table td strong {
   text-align: left;
 }
 
-.education table tr:nth-child(4n),
-.projects table tr:nth-child(4n) {
+.education table tr:nth-child(3n),
+.projects table tr:nth-child(3n) {
   border-bottom: 0.1em solid #f0f0f0;
-}
-
-.education table tr:nth-child(4n) td,
-.projects table tr:nth-child(4n) td {
   padding-bottom: 1.5%;
 }
 
-.education table tr:nth-child(4n + 1) td,
-.projects table tr:nth-child(4n + 1) td {
+.education table tr:nth-child(3n) td,
+.projects table tr:nth-child(3n) td {
+  padding-bottom: 1.5%;
+}
+
+.education table tr:nth-child(3n + 1) td,
+.projects table tr:nth-child(3n + 1) td {
   padding-top: 1.5%;
 }
 
@@ -427,20 +467,29 @@ img {
   margin-bottom: 1.5%;
 }
 
-.tech-stack div,
-.tools div {
+.tech-stack{
   display: flex;
   flex-wrap: wrap;
-  gap: 1%;
+  gap: 0.5%;
   align-items: center;
-  margin-top: 1%;
+  margin-top: -1%;
 }
 
-
+.tech-stack-icons{
+  border: #d0d0d0 solid 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 6px;
+  position: relative;
+  animation: techItemPop 0.5s ease-out both;
+  margin: 0.7%;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
 .tech-stack svg,
 .tools svg {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
   border-radius: 8px;
   padding: 4px;
   animation: techStackAppear 0.6s ease-out both;
@@ -482,6 +531,7 @@ img {
   }
 }
 
+
 .tech-stack svg:hover,
 .tools svg:hover {
   transform: translateY(-8px) scale(1.15);
@@ -493,8 +543,8 @@ img {
 .connect-icon svg{
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  border-radius: 8px;
-  padding: 4px;
+  /* border-radius: 8px;
+  padding: 4px; */
   animation: techStackAppear 0.6s ease-out both;
 }
 
@@ -524,19 +574,30 @@ img {
 
 
 .role {
-  font-style: italic;
-  color: #1877F2;
-  font-weight: bold;
+  margin: 1%;
+  padding: 1%;
+  margin-top: 1%;
+  display: flexbox;
+  /* font-style: italic; */
+  color: #00439a;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e5ebf0 100%);
   text-align: left;
+  letter-spacing: 0.4px;
+  border-radius: 5px;
  
 }
 
-.school {
-  font-style: italic;
-  color: #1877F2;
-  font-weight: bold;
+.ed {
+  margin: 1%;
+  padding: 1%;
+  margin-top: 1%;
+  display: flexbox;
+  /* font-style: italic; */
+  color: #00439a;
+ background: linear-gradient(135deg, #f8f9fa 0%, #e5ebf0 100%);
   text-align: left;
   letter-spacing: 0.4px;
+  border-radius: 5px;
   
 }
 
@@ -559,7 +620,7 @@ img {
   background: #4a90e2;
 }
 
-/* Enhanced Tech Stack Alignment with Animations */
+
 .tech-stacks {
   display: inline-flex;
   align-items: center;
@@ -573,14 +634,6 @@ img {
   transform: translateY(-2px);
 }
 
-.tech-stacks svg {
-  width: 32px !important;
-  height: 32px !important;
-  display: block;
-  vertical-align: middle;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .tech-stacks svg:hover {
   transform: scale(1.2);
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
@@ -592,14 +645,33 @@ img {
   gap: 8px;
   margin: 5px 0;
   padding: 12px;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e5ebf0 100%);
   border-radius: 8px;
   border-left: 4px solid #4a90e2;
   animation: builtUsingSlide 0.8s ease-out both;
   transition: all 0.3s ease;
+  margin-right: 49%;
 }
 
 .built-using-line:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ed:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.role:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.proj-desc:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.edu-desc:hover {
   transform: translateX(4px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -626,17 +698,19 @@ img {
   align-items: center;
   gap: 6px;
   flex-wrap: wrap;
+
 }
 
 .tech-stack-item {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 35px;
+  height: 35px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 6px;
   position: relative;
+  padding: 4px;
   animation: techItemPop 0.5s ease-out both;
 }
 
@@ -677,8 +751,8 @@ img {
 }
 
 .tech-stack-item svg {
-  width: 32px !important;
-  height: 32px !important;
+  width: 35px !important;
+  height: 35px !important;
   display: block;
   transition: transform 0.3s ease;
 }
